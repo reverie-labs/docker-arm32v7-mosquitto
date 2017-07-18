@@ -2,7 +2,7 @@
 Docker Raspberry Pi image for running the mosquitto MQTT broker
 
 ```
-docker run -p 1883:1883 -p 9000:9000 reverie/rpi-mosquitto:latest
+docker run -d -p 1883:1883 -p 9000:9000 reverie/rpi-mosquitto:latest
 ```
 
 ```
