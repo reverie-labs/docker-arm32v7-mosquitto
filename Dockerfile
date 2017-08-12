@@ -1,12 +1,11 @@
-FROM hypriot/rpi-alpine-scratch
+FROM resin/armhf-alpine
 MAINTAINER Guto Andreollo <gutoandreollo@users.noreply.github.com>
 
-RUN apk update && apk add mosquitto
+RUN apk --no-cache add mosquitto
 
-RUN mkdir /config
-VOLUME /config
+VOLUME /etc/mosquitto
 
 EXPOSE 1883 9000
 
-CMD ["/usr/sbin/mosquitto", "-c", "/config/mosquitto.conf"]
+ENTRYPOINT ["mosquitto"]
 
